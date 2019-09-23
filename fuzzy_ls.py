@@ -6,7 +6,7 @@ Created Time : 2019-04-01 21:41:57
 Fuzzy ls
 
 environments:
-    LSZ_FILE : also list files (default list only directories)
+    FZLS_FILES : also list files (default list only directories)
     ROOT: the root directory to list
 """
 import sys
@@ -14,7 +14,7 @@ import os
 from filetree import File
 
 version = '0.2'
-LSZ_FILE = os.getenv("LSZ_FILE")
+FZLS_FILES = os.getenv("FZLS_FILES")
 
 
 def find_path(F: File, prefixs, found: list, depth_total, depth_current):
@@ -43,7 +43,7 @@ def find_path(F: File, prefixs, found: list, depth_total, depth_current):
             v = [X.basename, vv]
             found.append(v)
 
-    if LSZ_FILE:
+    if FZLS_FILES:
         # file.files is []
         for X in F.files:
             if X.basename[0].lower() == prefixs[0].lower():

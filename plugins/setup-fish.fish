@@ -6,11 +6,13 @@ set target /tmp/fuzzy-ls
 set plugin $target/plugins/$name.plugin.fish
 set config $HOME/.config/fish/conf.d/fuzzy-ls.fish
 
+if test -d $target
+    rm -rf $target
+end
 echo clone to $target
 git clone $repo $target
 cp $plugin $config
 
-rm -rf /tmp/fuzzy-ls
 
 pip3 install -U fuzzy-ls
 

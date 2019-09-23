@@ -4,7 +4,7 @@
 
 ## environments:
 
-* `LSZ_FILE`: also list files (default list only directories)
+* `FZLS_FILES`: also list files (default list only directories)
 * `ROOT`: the root directory to list
 
 ## Install for shells
