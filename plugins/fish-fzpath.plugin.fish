@@ -7,7 +7,7 @@
 # bind \co '__fzf_open --editor'
 
 function __fzpath_files
-    env fzpath_FILES=1 fzpath $argv
+    env FZPATH_FILES=1 fzpath $argv
 end
 
 function __fzpath_dirs
@@ -17,14 +17,14 @@ end
 
 function fzpath_complete_files -a last
     begin; complete -C; __fzpath_files $last; end \
-        | fzf -d \t -1 -0 --ansi --header="$last" --height="30%" --tabstop=4 \
+        | fzf -1 -0 --ansi --tabstop=4 --reverse --preview 'cat {}' \
         | read -l token
     commandline -rt "$token"
 end
 
 function fzpath_complete_dirs -a last
     begin; complete -C; __fzpath_dirs $last; end \
-        | fzf -d \t -1 -0 --ansi --header="$last" --height="30%" --tabstop=4 \
+        | fzf -1 -0 --ansi --tabstop=4 --reverse --preview 'ls {}' \
         | read -l token
     commandline -rt "$token"
 end
