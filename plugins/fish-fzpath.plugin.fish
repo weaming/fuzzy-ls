@@ -17,14 +17,14 @@ end
 
 function fzpath_complete_files -a last
     begin; complete -C; __fzpath_files $last; end \
-        | fzf -d \t -1 -0 --ansi --header="$last" --height="80%" --tabstop=4 \
+        | fzf -d \t -1 -0 --ansi --header="$last" --height="30%" --tabstop=4 \
         | read -l token
     commandline -rt "$token"
 end
 
 function fzpath_complete_dirs -a last
     begin; complete -C; __fzpath_dirs $last; end \
-        | fzf -d \t -1 -0 --ansi --header="$last" --height="80%" --tabstop=4 \
+        | fzf -d \t -1 -0 --ansi --header="$last" --height="30%" --tabstop=4 \
         | read -l token
     commandline -rt "$token"
 end
