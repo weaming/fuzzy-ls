@@ -13,7 +13,7 @@ import sys
 import os
 from filetree import File
 
-version = '0.2'
+version = '0.3'
 FZLS_FILES = os.getenv("FZLS_FILES")
 
 
