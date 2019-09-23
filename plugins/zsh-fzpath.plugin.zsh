@@ -15,7 +15,7 @@ _zic_complete() {
   setopt localoptions nonomatch
   local l matches fzf tokens base
 
-  l=$(fzls $@[-1])
+  l=$(fzpath $@[-1])
 
   if [ -z "$l" ]; then
     zle ${__zic_default_completion:-expand-or-complete}
