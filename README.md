@@ -15,7 +15,7 @@ Install [fzf](https://github.com/junegunn/fzf) by following its [installation in
 
     curl -sS https://raw.githubusercontent.com/weaming/fuzzy-path/master/plugins/setup-zsh.sh | ZSH_CUSTOM=$ZSH_CUSTOM bash
 
-### Usage
+#### Usage
 
 Press `Ctrl+i` for completion, it'll launch fzf automatically. It will only complete the last part of your input command.
 Check fzf’s [readme](https://github.com/junegunn/fzf#search-syntax) for more search syntax usage.
