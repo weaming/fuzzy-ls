@@ -2,7 +2,7 @@
 
 name='zsh-fzpath'
 repo="https://github.com/weaming/fuzzy-path.git"
-target="$ZSH_CUSTOM/plugins/$name"
+target="${ZSH_CUSTOM:-$HOME/.local/src}/plugins/$name"
 plugin="$target/plugins/$name.plugin.zsh"
 
 echo clone to $target
