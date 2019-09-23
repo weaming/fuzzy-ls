@@ -10,5 +10,7 @@ echo clone to $target
 git clone $repo $target
 cp $plugin $config
 
+rm -rf /tmp/fuzzy-ls
+
 pip3 install -U fuzzy-ls
 
