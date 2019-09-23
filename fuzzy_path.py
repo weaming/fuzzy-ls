@@ -3,18 +3,18 @@
 Author       : weaming
 Created Time : 2019-04-01 21:41:57
 
-Fuzzy ls
+Fuzzy path
 
 environments:
-    FZLS_FILES : also list files (default list only directories)
+    FZPATH_FILES : also list files (default list only directories)
     ROOT: the root directory to list
 """
 import sys
 import os
 from filetree import File
 
-version = '0.3'
-FZLS_FILES = os.getenv("FZLS_FILES")
+version = '0.1'
+FZPATH_FILES = os.getenv("FZPATH_FILES")
 
 
 def find_path(F: File, prefixs, found: list, depth_total, depth_current):
@@ -43,7 +43,7 @@ def find_path(F: File, prefixs, found: list, depth_total, depth_current):
             v = [X.basename, vv]
             found.append(v)
 
-    if FZLS_FILES:
+    if FZPATH_FILES:
         # file.files is []
         for X in F.files:
             if X.basename[0].lower() == prefixs[0].lower():

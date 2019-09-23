@@ -1,10 +1,10 @@
-# Fuzzy `ls`
+# Fuzzy path
 
-    pip3 install fuzzy-ls
+    pip3 install fuzzy-path
 
 ## environments:
 
-* `FZLS_FILES`: also list files (default list only directories)
+* `FZPATH_FILES`: also list files (default list only directories)
 * `ROOT`: the root directory to list
 
 ## Install for shells
@@ -13,7 +13,7 @@ Install [fzf](https://github.com/junegunn/fzf) by following its [installation in
 
 ### Zsh
 
-    curl -sS https://raw.githubusercontent.com/weaming/fuzzy-ls/master/plugins/setup-zsh.sh | ZSH_CUSTOM=$ZSH_CUSTOM bash
+    curl -sS https://raw.githubusercontent.com/weaming/fuzzy-path/master/plugins/setup-zsh.sh | ZSH_CUSTOM=$ZSH_CUSTOM bash
 
 ### Usage
 
@@ -36,4 +36,4 @@ Support comamnds:
 
 ### Fish
 
-    curl -sS https://raw.githubusercontent.com/weaming/fuzzy-ls/master/plugins/setup-fish.fish | fish
+    curl -sS https://raw.githubusercontent.com/weaming/fuzzy-path/master/plugins/setup-fish.fish | fish

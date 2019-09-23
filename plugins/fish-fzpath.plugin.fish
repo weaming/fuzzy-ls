@@ -6,24 +6,24 @@
 # bind \cg '__fzf_open'
 # bind \co '__fzf_open --editor'
 
-function __fzls_files
-    env FZLS_FILES=1 fzls $argv
+function __fzpath_files
+    env fzpath_FILES=1 fzpath $argv
 end
 
-function __fzls_dirs
-    set -e FZLS_FILES
-    fzls $argv
+function __fzpath_dirs
+    set -e fzpath_FILES
+    fzpath $argv
 end
 
-function fzls_complete_files -a last
-    begin; complete -C; __fzls_files $last; end \
+function fzpath_complete_files -a last
+    begin; complete -C; __fzpath_files $last; end \
         | fzf -d \t -1 -0 --ansi --header="$last" --height="80%" --tabstop=4 \
         | read -l token
     commandline -rt "$token"
 end
 
-function fzls_complete_dirs -a last
-    begin; complete -C; __fzls_dirs $last; end \
+function fzpath_complete_dirs -a last
+    begin; complete -C; __fzpath_dirs $last; end \
         | fzf -d \t -1 -0 --ansi --header="$last" --height="80%" --tabstop=4 \
         | read -l token
     commandline -rt "$token"
@@ -38,18 +38,18 @@ function startswith_any
     return 1
 end
 
-function fzls_complete
+function fzpath_complete
     set -l cmd (commandline)
     set -l last (commandline | awk '{print $NF}')
     if startswith_any $cmd cd tree
-        fzls_complete_dirs $last
+        fzpath_complete_dirs $last
     else
-        fzls_complete_files $last
+        fzpath_complete_files $last
     end
 end
 
-function fzls_key_bindings
-    bind \cs 'fzls_complete'
+function fzpath_key_bindings
+    bind \cs 'fzpath_complete'
 end
 
-fzls_key_bindings
+fzpath_key_bindings

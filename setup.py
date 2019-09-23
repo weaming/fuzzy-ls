@@ -30,18 +30,18 @@ install_requires = [
     if l.strip() and not l.strip().startswith("#")
 ]
 
-name = "fuzzy-ls"
+name = "fuzzy-path"
 gh_repo = "https://github.com/weaming/{}".format(name)
 
 setup(
     name=name,  # Required
-    version=get_version("fuzzy_ls.py"),  # Required
-    description="list files by chars composed by first letters of each levels",  # Required
+    version=get_version("fuzzy_path.py"),  # Required
+    description="List paths by chars composed by first letters of each levels",  # Required
     long_description=long_description,  # Optional
     long_description_content_type="text/markdown",  # Optional
     install_requires=install_requires,
-    py_modules=['fuzzy_ls'],
-    entry_points={"console_scripts": ["fzls=fuzzy_ls:main"]},  # Optional
+    py_modules=['fuzzy_path'],
+    entry_points={"console_scripts": ["fzpath=fuzzy_path:main"]},  # Optional
     url=gh_repo,  # Optional
     author="weaming",  # Optional
     author_email="garden.yuen@gmail.com",  # Optional
